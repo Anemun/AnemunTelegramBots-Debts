@@ -49,7 +49,7 @@ def writeHistory(name, date, message):
 
 
 def getHistory():
-    result = runQuery("SELECT * FROM history LIMIT 100")    
+    result = runQuery("SELECT * FROM history LIMIT 50")    
     return result
 
 
