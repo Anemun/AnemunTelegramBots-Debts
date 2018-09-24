@@ -37,6 +37,7 @@ pipeline {
                             withCredentials([usernamePassword(credentialsId: 'dockerHubAnemun', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD'),
                                     string(credentialsId: 'ServerIP', variable: 'IP')]) { 
                                 sh "ssh -o StrictHostKeyChecking=no $IP docker login -u $USERNAME -p $PASSWORD"
+                                sh "ssh -o StrictHostKeyChecking=no $IP docker pull $DOCKER_IMAGE"
                                 sh "ssh -o StrictHostKeyChecking=no $IP docker run -d --restart always -v /etc/localtime:/etc/localtime:ro -v $DATABASE_PATH_LOCAL:$DATABASE_PATH_CONTAINER --name $CONTAINER_NAME $DOCKER_IMAGE --botToken $BOT_TOKEN --databasePath $DATABASE_PATH_CONTAINER"
                             }
                         }
