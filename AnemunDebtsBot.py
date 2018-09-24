@@ -6,7 +6,7 @@ from telebot import types
 from datetime import datetime
 
 parser=argparse.ArgumentParser()
-parser.add_argument('--botToken', help='telegram bot token to whom notifications will be sent')
+parser.add_argument('--botToken', help='telegram bot token')
 parser.add_argument('--databasePath', help='pathtoDatabase')
 args=parser.parse_args()
 
