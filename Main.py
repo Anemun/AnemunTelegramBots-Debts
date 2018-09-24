@@ -7,7 +7,7 @@ from datetime import datetime
 TELEGRAM_BOT_TOKEN = argv[1]
 DATABASE_FILE = argv[2]
 
-version = "1.1-20180817"
+version = "1.2.0-20180924"
 
 bot = telebot.TeleBot(TELEGRAM_BOT_TOKEN)
 
