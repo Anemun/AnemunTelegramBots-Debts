@@ -1,7 +1,6 @@
 import telebot
 import databaseProvider
 import argparse, sys
-from sys import argv
 from telebot import types
 from datetime import datetime
 
