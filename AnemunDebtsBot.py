@@ -58,6 +58,10 @@ def showDebts(message):
 def confirmDebt(message):
     text = str.split(message.text, ' ')
     if len(text) == 4:
+        if ',' in text[3] or '.' in text[3]:
+            bot.send_message(chat_id=message.chat.id,
+                     text="Дроби это слишком сложно для меня :( пожалуйста, используйте целые числа.")
+            return
         keyboard = types.InlineKeyboardMarkup()
         button_yes = types.InlineKeyboardButton(text="Да", callback_data="writeDebtYes")
         button_no = types.InlineKeyboardButton(text="Нет", callback_data="writeDebtNo")
